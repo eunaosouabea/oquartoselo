@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 39 40% 85%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 39 40% 85%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 39 40% 85%;
+
+    --primary: 39 65% 55%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 45% 25%;
+    --secondary-foreground: 39 40% 85%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 39 20% 60%;
+
+    --accent: 0 50% 35%;
+    --accent-foreground: 39 40% 85%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 39 40% 95%;
+
+    --border: 39 30% 25%;
+    --input: 0 0% 12%;
+    --ring: 39 65% 55%;
+
+    --radius: 0.25rem;
+
+    --wine: 0 45% 25%;
+    --gold: 39 65% 55%;
+    --sepia: 39 40% 85%;
+    --dark: 0 0% 4%;
+    
+    --shadow-elegant: 0 20px 60px -15px hsl(0 0% 0% / 0.8);
+    --shadow-glow: 0 0 50px hsl(39 65% 55% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 30px hsl(var(--gold) / 0.3);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
